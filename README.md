@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.7.1-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.8.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -15,6 +15,10 @@ In the release's **Assets**, choose **ATCAlert-1.7.1-windows.zip** (or the newer
 5. Keep the computer awake with PilotUI and ATC Alert running. The included **START-HERE.html** has the full guide. Reopen setup from **More options > Setup assistant...**; configured existing users are not forced through it after updating.
 
 ## Features
+
+- **Check status**: separate readiness for PilotUI, IVAO flight data, iPhone requests and desktop sound, with timestamps and next steps.
+- **History**: browse previous local sessions, filter contact requests, and search callsigns, stations, frequencies or messages without replaying alerts.
+- **Appearance**: Follow Windows, Light or Dark, with saved preferences and immediate changes.
 
 - Automatic callsign detection from the running PilotUI profile, following changes about every two seconds, with manual entry available by turning **Auto** off.
 - A prominent green **LIVE** badge with a gently pulsing dot for data from the current PilotUI process; old data from a previous process does not keep it live.
@@ -29,7 +33,7 @@ In the release's **Assets**, choose **ATCAlert-1.7.1-windows.zip** (or the newer
 
 ## Updating
 
-**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.7.1. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **More options > Setup assistant...**.
+**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.8.0. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **More options > Setup assistant...**.
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
