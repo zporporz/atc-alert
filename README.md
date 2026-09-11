@@ -4,17 +4,19 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.5.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.6.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
 1. Extract the release ZIP to a writable folder on Windows 10/11 with .NET Framework 4.8 or later.
-2. Open IVAO PilotUI, then ATC Alert. Enter the same callsign used in PilotUI.
-3. For iPhone alerts, install [Bark](https://apps.apple.com/app/bark-custom-notifications/id1403753865), allow Notifications and Critical Alerts, and open **iPhone setup** in ATC Alert. Enter your own Bark key, send a test and save.
-4. Open the included **START-HERE.html** for the full setup guide. Keep the computer awake with PilotUI and ATC Alert running.
+2. Open IVAO PilotUI, then ATC Alert. The first-run **Setup assistant** finds PilotUI and asks for the same callsign used in PilotUI.
+3. Optional: install [Bark](https://apps.apple.com/app/bark-custom-notifications/id1403753865), allow Notifications and Critical Alerts, then select **Send alerts to my iPhone** in the assistant. Copy the first **Body Text** link from Bark into the masked box. Leave this off for desktop-only alerts.
+4. Use the final step's desktop and iPhone test buttons, then click **Finish**. Check the sound on the locked phone yourself; API acceptance does not confirm delivery. No controller needs to participate.
+5. Keep the computer awake with PilotUI and ATC Alert running. The included **START-HERE.html** has the full guide. Reopen setup from **More options > Setup assistant...**; configured existing users are not forced through it after updating.
 
 ## Features
 
+- Four-step first-run setup with PilotUI detection, callsign validation, optional iPhone connection and explicit sound tests.
 - Repeating desktop alarm for matching incoming ATC contact requests; **Acknowledge** stops the computer sound.
 - Optional Bark phone alarm, with Critical Alert support when permitted by iOS.
 - Active CTR coverage advisories using public IVAO polygons, with a separate short Critical notification when a CTR comes online while you are already inside.
@@ -25,7 +27,7 @@ In the release's **Assets**, choose **ATCAlert-1.5.0-windows.zip** (or the newer
 
 ## Updating
 
-**Already on 1.4.0?** Open **Updates > Download & install** to get 1.5.0.
+**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.6.0. Your settings are kept. To try the new assistant, use **More options > Setup assistant...**.
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
