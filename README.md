@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.2.0-windows.zip** (or the newer versioned Windows ZIP). Extract all files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.3.0-windows.zip** (or the newer versioned Windows ZIP). Extract all files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -23,7 +23,7 @@ In the release's **Assets**, choose **ATCAlert-1.2.0-windows.zip** (or the newer
 
 ## Updating
 
-Version 1.2.0 introduces the update checker. Users of earlier versions need to download it manually once. Thereafter the app checks for stable releases on startup and every six hours; you can disable automatic checks in the Updates window.
+Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
 When a newer version is available, choose **Download update**, close ATC Alert, and extract the new ZIP into the existing folder. Keep your settings files and captures. The app does not install patches or restart itself. Keep **update-source.json** beside the executable. A GitHub account is not required.
 
@@ -33,6 +33,6 @@ This is an independent utility, not an official IVAO product. Contact detection 
 
 Airspace advisories require published CTR polygons. There is no altitude filtering, and APP/TWR/GND/FSS coverage is not monitored. Check which controller actually applies to your flight. Public data and polling introduce delays.
 
-The release ZIP contains no personal settings or capture logs. Each user enters their own callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks send no callsign, Bark key or logs to GitHub.
+The release ZIP contains no personal settings or capture logs. Each user enters their own callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks and the Cloudflare release relay receive no callsign, Bark key or logs. The relay carries public version hints and heartbeat messages; its hosting provider can see connection IP addresses.
 
 The Windows executable is not code signed. This repository distributes release binaries and public instructions.
