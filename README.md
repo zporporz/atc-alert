@@ -1,0 +1,38 @@
+# ATC Alert
+
+A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone notifications through Bark, and active CTR airspace advisories.
+
+**[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
+
+In the release's **Assets**, choose **ATCAlert-1.2.0-windows.zip** (or the newer versioned Windows ZIP). Extract all files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+
+## Getting started
+
+1. Extract the release ZIP to a writable folder on Windows 10/11 with .NET Framework 4.8 or later.
+2. Open IVAO PilotUI, then ATC Alert. Enter the same callsign used in PilotUI.
+3. For iPhone alerts, install [Bark](https://apps.apple.com/app/bark-custom-notifications/id1403753865), allow Notifications and Critical Alerts, and open **iPhone setup** in ATC Alert. Enter your own Bark key, send a test and save.
+4. Open the included **START-HERE.html** for the full setup guide. Keep the computer awake with PilotUI and ATC Alert running.
+
+## Features
+
+- Repeating desktop alarm for matching incoming ATC contact requests; **Acknowledge** stops the computer sound.
+- Optional Bark phone alarm, with Critical Alert support when permitted by iOS.
+- Active CTR coverage advisories using public IVAO polygons, with a separate short Critical notification when a CTR comes online while you are already inside.
+- Local airspace simulation and explicit phone tests, without requiring a controller to participate.
+- Update notifications from this repository, with **Check now** and **Download update**.
+
+## Updating
+
+Version 1.2.0 introduces the update checker. Users of earlier versions need to download it manually once. Thereafter the app checks for stable releases on startup and every six hours; you can disable automatic checks in the Updates window.
+
+When a newer version is available, choose **Download update**, close ATC Alert, and extract the new ZIP into the existing folder. Keep your settings files and captures. The app does not install patches or restart itself. Keep **update-source.json** beside the executable. A GitHub account is not required.
+
+## Scope and local data
+
+This is an independent utility, not an official IVAO product. Contact detection passively reads PilotUI debug messages and matches contact text; an identical manually typed message also triggers it. It cannot prove that a distinct FORCE ACT command was used. Compatibility has been verified on one Windows installation with Altitude 1.13.0.33.
+
+Airspace advisories require published CTR polygons. There is no altitude filtering, and APP/TWR/GND/FSS coverage is not monitored. Check which controller actually applies to your flight. Public data and polling introduce delays.
+
+The release ZIP contains no personal settings or capture logs. Each user enters their own callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks send no callsign, Bark key or logs to GitHub.
+
+The Windows executable is not code signed. This repository distributes release binaries and public instructions.
