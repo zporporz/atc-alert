@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.3.0-windows.zip** (or the newer versioned Windows ZIP). Extract all files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.4.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -19,13 +19,15 @@ In the release's **Assets**, choose **ATCAlert-1.3.0-windows.zip** (or the newer
 - Optional Bark phone alarm, with Critical Alert support when permitted by iOS.
 - Active CTR coverage advisories using public IVAO polygons, with a separate short Critical notification when a CTR comes online while you are already inside.
 - Local airspace simulation and explicit phone tests, without requiring a controller to participate.
-- Update notifications from this repository, with **Check now** and **Download update**.
+- Live release notifications, **Check now**, and one-click **Download & install** with automatic restart.
 
 ## Updating
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
-When a newer version is available, choose **Download update**, close ATC Alert, and extract the new ZIP into the existing folder. Keep your settings files and captures. The app does not install patches or restart itself. Keep **update-source.json** beside the executable. A GitHub account is not required.
+From **1.4.0**, choose **Download & install** when a newer version is available. The app downloads and verifies the release, closes, installs it and reopens automatically. Your callsign, Bark settings and captures stay in place. Monitoring continues during download and pauses briefly to restart. Acknowledge any active ATC alert before installing. Downloads can be cancelled, and installation errors trigger rollback to the saved files.
+
+**Already using 1.3.0 or earlier?** Install 1.4.0 manually once: close ATC Alert and extract all six files from the new ZIP into your existing folder. After that, future updates install from the app. Keep **ATCAlert.Updater.exe** and **update-source.json** beside **ATCAlert.exe**. A GitHub account is not required.
 
 ## Scope and local data
 
