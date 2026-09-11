@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.4.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.5.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -20,8 +20,12 @@ In the release's **Assets**, choose **ATCAlert-1.4.0-windows.zip** (or the newer
 - Active CTR coverage advisories using public IVAO polygons, with a separate short Critical notification when a CTR comes online while you are already inside.
 - Local airspace simulation and explicit phone tests, without requiring a controller to participate.
 - Live release notifications, **Check now**, and one-click **Download & install** with automatic restart.
+- Close/minimize to the Windows tray, explicit Exit confirmation, and one running instance per Windows user/session.
+- Automatic PilotUI listener retries, plus deduplicated local monitoring failure/recovery notices on desktop and optionally iPhone.
 
 ## Updating
+
+**Already on 1.4.0?** Open **Updates > Download & install** to get 1.5.0.
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
@@ -30,6 +34,8 @@ From **1.4.0**, choose **Download & install** when a newer version is available.
 **Already using 1.3.0 or earlier?** Install 1.4.0 manually once: close ATC Alert and extract all six files from the new ZIP into your existing folder. After that, future updates install from the app. Keep **ATCAlert.Updater.exe** and **update-source.json** beside **ATCAlert.exe**. A GitHub account is not required.
 
 ## Scope and local data
+
+In 1.5.0, **X** and minimize keep the app running near the Windows clock. Double-click its aircraft icon to reopen; use **Exit** to stop monitoring. If the listener stops or a previously running PilotUI closes for 20 seconds, monitoring notices explain the problem. Receiver retries use backoff up to 30 seconds; a stable recovery sends one follow-up. Optional iPhone status notices have a short normal sound and can be disabled under **More options > Send monitoring status to iPhone**. Quiet chat is not treated as disconnection. This checks local monitoring, not an IVAO network connection, and cannot warn if the app itself or the computer is off.
 
 This is an independent utility, not an official IVAO product. Contact detection passively reads PilotUI debug messages and matches contact text; an identical manually typed message also triggers it. It cannot prove that a distinct FORCE ACT command was used. Compatibility has been verified on one Windows installation with Altitude 1.13.0.33.
 
