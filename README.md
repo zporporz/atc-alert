@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.8.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.9.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -12,9 +12,14 @@ In the release's **Assets**, choose **ATCAlert-1.8.0-windows.zip** (or the newer
 2. Open IVAO PilotUI, then ATC Alert. The first-run **Setup assistant** finds PilotUI. Leave automatic callsign detection on; the app reads the callsign saved by your running PilotUI without requiring you to type it.
 3. Optional: install [Bark](https://apps.apple.com/app/bark-custom-notifications/id1403753865), allow Notifications and Critical Alerts, then select **Send alerts to my iPhone** in the assistant. Copy the first **Body Text** link from Bark into the masked box. Leave this off for desktop-only alerts.
 4. Use the final step's desktop and iPhone test buttons, then click **Finish**. Check the sound on the locked phone yourself; API acceptance does not confirm delivery. No controller needs to participate.
-5. Keep the computer awake with PilotUI and ATC Alert running. The included **START-HERE.html** has the full guide. Reopen setup from **More options > Setup assistant...**; configured existing users are not forced through it after updating.
+5. Keep the computer awake with PilotUI and ATC Alert running. The included **START-HERE.html** has the full guide. Reopen setup from **Settings > More options > Setup assistant...**; configured existing users are not forced through it after updating.
 
 ## Features
+
+- A compact home screen with prominent callsign/LIVE status, large station and frequency, and an easy-to-reach **Acknowledge** button.
+- **Settings > Alert output device**: put ATC Alert sound on your speakers while your game stays on headphones. The selected output is remembered; missing speakers are reported without silently switching outputs.
+- An embedded aircraft icon and a Desktop shortcut created when the new version first opens. Recreate it from Settings. This does not add Windows auto-start.
+- Settings groups desktop sound, airspace and appearance controls. History holds the message list and counts new activity on its button.
 
 - **Check status**: separate readiness for PilotUI, IVAO flight data, iPhone requests and desktop sound, with timestamps and next steps.
 - **History**: browse previous local sessions, filter contact requests, and search callsigns, stations, frequencies or messages without replaying alerts.
@@ -33,7 +38,7 @@ In the release's **Assets**, choose **ATCAlert-1.8.0-windows.zip** (or the newer
 
 ## Updating
 
-**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.8.0. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **More options > Setup assistant...**.
+**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.9.0. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **Settings > More options > Setup assistant...**.
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
@@ -45,7 +50,7 @@ From **1.4.0**, choose **Download & install** when a newer version is available.
 
 Auto callsign reads only the saved `callsign` value from the current Windows user's PilotUI preferences, after checking that exactly one matching PilotUI process is running. It does not read account IDs, passwords or tokens. Close extra PilotUI instances for Auto, or use manual entry if detection is unavailable. Auto clears its displayed callsign when PilotUI closes. A saved profile value and the LIVE indicator do not prove an IVAO network connection; LIVE confirms local process data only.
 
-In 1.5.0, **X** and minimize keep the app running near the Windows clock. Double-click its aircraft icon to reopen; use **Exit** to stop monitoring. If the listener stops or a previously running PilotUI closes for 20 seconds, monitoring notices explain the problem. Receiver retries use backoff up to 30 seconds; a stable recovery sends one follow-up. Optional iPhone status notices have a short normal sound and can be disabled under **More options > Send monitoring status to iPhone**. Quiet chat is not treated as disconnection. This checks local monitoring, not an IVAO network connection, and cannot warn if the app itself or the computer is off.
+In 1.5.0, **X** and minimize keep the app running near the Windows clock. Double-click its aircraft icon to reopen; use **Exit** to stop monitoring. If the listener stops or a previously running PilotUI closes for 20 seconds, monitoring notices explain the problem. Receiver retries use backoff up to 30 seconds; a stable recovery sends one follow-up. Optional iPhone status notices have a short normal sound and can be disabled under **Settings > More options > Send monitoring status to iPhone**. Quiet chat is not treated as disconnection. This checks local monitoring, not an IVAO network connection, and cannot warn if the app itself or the computer is off.
 
 This is an independent utility, not an official IVAO product. Contact detection passively reads PilotUI debug messages and matches contact text; an identical manually typed message also triggers it. It cannot prove that a distinct FORCE ACT command was used. Compatibility has been verified on one Windows installation with Altitude 1.13.0.33.
 
@@ -54,3 +59,4 @@ Airspace advisories require published CTR polygons. There is no altitude filteri
 The release ZIP contains no personal settings or capture logs. Each user uses their own PilotUI callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks and the Cloudflare release relay receive no callsign, Bark key or logs. The relay carries public version hints and heartbeat messages; its hosting provider can see connection IP addresses.
 
 The Windows executable is not code signed. This repository distributes release binaries and public instructions.
+
