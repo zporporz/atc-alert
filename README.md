@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.9.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.9.2-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -15,6 +15,8 @@ In the release's **Assets**, choose **ATCAlert-1.9.0-windows.zip** (or the newer
 5. Keep the computer awake with PilotUI and ATC Alert running. The included **START-HERE.html** has the full guide. Reopen setup from **Settings > More options > Setup assistant...**; configured existing users are not forced through it after updating.
 
 ## Features
+
+- **Update recovery (v1.9.2):** if a live release hint arrives while its metadata is unavailable, automatic checks retry every five minutes until verified, respecting longer server rate limits. Keep automatic updates enabled. No app restart is needed for recovery.
 
 - **Bark Message History (v1.9.1):** new contact, airspace, monitoring and test notifications request storage in Bark as well as appearing as notifications. Earlier alerts sent without history storage are not restored or resent.
 
