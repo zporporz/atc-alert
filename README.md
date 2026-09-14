@@ -16,6 +16,8 @@ In the release's **Assets**, choose **ATCAlert-1.9.0-windows.zip** (or the newer
 
 ## Features
 
+- **Bark Message History (v1.9.1):** new contact, airspace, monitoring and test notifications request storage in Bark as well as appearing as notifications. Earlier alerts sent without history storage are not restored or resent.
+
 - A compact home screen with prominent callsign/LIVE status, large station and frequency, and an easy-to-reach **Acknowledge** button.
 - **Settings > Alert output device**: put ATC Alert sound on your speakers while your game stays on headphones. The selected output is remembered; missing speakers are reported without silently switching outputs.
 - An embedded aircraft icon and a Desktop shortcut created when the new version first opens. Recreate it from Settings. This does not add Windows auto-start.
@@ -38,7 +40,7 @@ In the release's **Assets**, choose **ATCAlert-1.9.0-windows.zip** (or the newer
 
 ## Updating
 
-**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.9.0. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **Settings > More options > Setup assistant...**.
+**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.9.1. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **Settings > More options > Setup assistant...**.
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
@@ -59,4 +61,5 @@ Airspace advisories require published CTR polygons. There is no altitude filteri
 The release ZIP contains no personal settings or capture logs. Each user uses their own PilotUI callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks and the Cloudflare release relay receive no callsign, Bark key or logs. The relay carries public version hints and heartbeat messages; its hosting provider can see connection IP addresses.
 
 The Windows executable is not code signed. This repository distributes release binaries and public instructions.
+
 
