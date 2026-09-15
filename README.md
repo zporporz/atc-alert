@@ -4,7 +4,7 @@ A Windows companion for IVAO Altitude, with desktop alarms, optional iPhone noti
 
 **[Download the latest Windows release](https://github.com/zporporz/atc-alert/releases/latest)**
 
-In the release's **Assets**, choose **ATCAlert-1.9.2-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
+In the release's **Assets**, choose **ATCAlert-1.10.0-windows.zip** (or the newer versioned Windows ZIP). Extract all six files and run **ATCAlert.exe**. The automatically generated Source code downloads do not contain the application.
 
 ## Getting started
 
@@ -15,6 +15,8 @@ In the release's **Assets**, choose **ATCAlert-1.9.2-windows.zip** (or the newer
 5. Keep the computer awake with PilotUI and ATC Alert running. The included **START-HERE.html** has the full guide. Reopen setup from **Settings > More options > Setup assistant...**; configured existing users are not forced through it after updating.
 
 ## Features
+
+- **Acknowledge airspace (v1.10.0):** normal advisory within 25 NM. Acknowledge the displayed CTR on the computer, or tap the Bark notification and confirm on its page. An acknowledged encounter stays quiet on entry; otherwise entry uses a short Critical phone alarm when enabled. Reading alone does not acknowledge. Keep the computer online; phone acknowledgement checks normally run every five seconds. Contact requests and the separate CTR-online rule stay independent.
 
 - **Update recovery (v1.9.2):** if a live release hint arrives while its metadata is unavailable, automatic checks retry every five minutes until verified, respecting longer server rate limits. Keep automatic updates enabled. No app restart is needed for recovery.
 
@@ -42,7 +44,7 @@ In the release's **Assets**, choose **ATCAlert-1.9.2-windows.zip** (or the newer
 
 ## Updating
 
-**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.9.1. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **Settings > More options > Setup assistant...**.
+**Already on 1.4.0 or later?** Open **Updates > Download & install** to get 1.10.0. Your sound and phone settings are kept. Auto callsign is enabled by default; turn **Auto** off for manual entry. To try the assistant, use **Settings > More options > Setup assistant...**.
 
 Version 1.3.0 receives live release signals over a WebSocket relay. When a stable release is published, connected apps verify it with GitHub and show Update available without waiting for a polling interval. Network and service delays still apply. The app must be running and online. Automatic reconnect and six-hour fallback checks are included. You can disable automatic update notifications in the Updates window. Version 1.2.0 users can click Check now to get this release; earlier versions need a manual download.
 
@@ -60,8 +62,10 @@ This is an independent utility, not an official IVAO product. Contact detection 
 
 Airspace advisories require published CTR polygons. There is no altitude filtering, and APP/TWR/GND/FSS coverage is not monitored. Check which controller actually applies to your flight. Public data and polling introduce delays.
 
-The release ZIP contains no personal settings or capture logs. Each user uses their own PilotUI callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks and the Cloudflare release relay receive no callsign, Bark key or logs. The relay carries public version hints and heartbeat messages; its hosting provider can see connection IP addresses.
+The release ZIP contains no personal settings or capture logs. Each user uses their own PilotUI callsign and Bark key. Settings and captures are stored beside the executable; Bark settings are encrypted for the current Windows account. Phone delivery sends relevant alert details through Bark. Update checks and the Cloudflare release relay receive no callsign, Bark key or logs. The release channel carries public version hints and heartbeat messages; its hosting provider can see connection IP addresses.
 
 The Windows executable is not code signed. This repository distributes release binaries and public instructions.
 
 
+
+Phone acknowledgement links are private capabilities for individual encounters. The relay stores only a hashed identifier and expiry for eight hours; its acknowledgement API receives no Bark key or flight details. Old links cannot acknowledge a new encounter. Restarting the app resets encounter tracking. An alert already sent cannot be recalled.
